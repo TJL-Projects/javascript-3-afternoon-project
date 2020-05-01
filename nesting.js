@@ -50,7 +50,13 @@ var employees = [
     3. Return the updated employee array.
 */
 
-//Code Here
+let employeeUpdater = () => {
+  employees.forEach( (element, index) => {
+    element.firstName === 'Theo' ? delete employees[index] :
+    element.firstName === 'Lorie' ? element.department = 'HR': null
+  })
+  return employees 
+}
 
 
 
@@ -68,9 +74,9 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     3. Return the updated array.
 */
 
-//Code Here
+let removeDuplicates = (arr) => [...new Set(arr)] 
 
-
+// console.log(removeDuplicates(workplaceAccidents))
 
 ////////// PROBLEM 3 //////////
 
@@ -97,8 +103,8 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends[0].activities[1]
+var fluffy2ndFriend = cat.catFriends[1].name
 
 
 
@@ -138,7 +144,8 @@ var myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-//Code Here
+let recordCleaner = () => myCar.accidents.forEach(element => element.atFaultForAccident = false)
+
 
 
 
@@ -157,6 +164,15 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
     4. Return the modified numsArr.
 */
 
-//Code Here
-
-
+function looper(){
+  for(let i = 0; i < numsArr.length; i++) {
+    for(let j = 0 ;j < numsArr[i].length; j++) {
+      if (numsArr[i][j] % 2 === 0) {
+         numsArr[i][j] = 'even';
+      } else {
+         numsArr[i][j] = 'odd';
+      }
+    }
+  }
+  return numsArr;
+}
